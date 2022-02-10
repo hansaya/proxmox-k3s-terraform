@@ -119,4 +119,4 @@ it shoul look like this now:
 
 ![alt text](pics/h0Ha98fXyO.png)
 
-You can use the auto generated host file for Ansible.
+You can use the auto generated host file for Ansible. To install k3s, I recommend the great work by https://github.com/itwars/k3s-ansible. If you are experimenting alot, create a sym link between `inventory/hosts.ini` and `k3s-ansible/inventory/my-cluster/hosts.ini` and set `ansible_user` in `group_vars/all.yml`.
