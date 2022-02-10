@@ -1,0 +1,72 @@
+variable "proxmox-user" {
+  sensitive = true
+  default = "root@pam"
+}
+
+variable "proxmox-password" {
+  sensitive = true
+  default = "<password>"
+}
+
+variable "proxmox_cluster_name" {
+ default = "<Cluster name>"
+}
+
+variable "proxmox-host" {
+  default = "<host>"
+}
+
+variable "pvt_key" {
+  default = "~/.ssh/proxk3s"
+}
+
+variable "num_k3s_masters" {
+ default = 3 
+}
+
+variable "num_k3s_masters_mem" {
+ default = "10240"
+}
+
+variable "num_k3s_nodes" {
+ default = 3
+}
+
+variable "num_k3s_nodes_mem" {
+ default = "10240"
+}
+
+variable "num_k3s_nodes_worker_storage" {
+ default = "30G"
+}
+
+variable "num_k3s_nodes_master_storage" {
+ default = "10G"
+}
+
+variable "tamplate_vm_name" {
+ default = "ubuntu-focal-cloudinit-template"
+}
+
+variable "ip_sub" {
+  default = "192.168.1.0"
+}
+
+variable "ip_sub_mask" {
+  default = 24
+}
+
+variable "master_ip_start" {
+  description = "Start of the master nodes ip example: 170 (192.168.1.170..171..172)"
+  default = 170
+}
+
+variable "worker_ip_start" {
+  description = "Start of the master nodes ip example: 180 (192.168.1.180..181..182)"
+  default = 180
+}
+
+variable "default_gateway" {
+  description = "Default gateway"
+  default = "192.168.1.1"
+}
