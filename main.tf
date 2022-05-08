@@ -23,7 +23,8 @@ resource "proxmox_vm_qemu" "proxmox_vm_master" {
   os_type     = "cloud-init"
   agent       = 1
   memory      = var.num_k3s_masters_mem
-  cores       = 8
+  cores       = var.number_of_cores
+  onboot      = var.start_on_boot
   disk {
     slot            = 0
     size            = var.num_k3s_nodes_master_storage
@@ -42,8 +43,9 @@ resource "proxmox_vm_qemu" "proxmox_vm_workers" {
   clone       = var.tamplate_vm_name
   os_type     = "cloud-init"
   agent       = 1
-  memory      = var.num_k3s_nodes_mem
-  cores       = 8
+  memory      = var.num_k3s_worker_mem
+  cores       = var.number_of_cores
+  onboot      = var.start_on_boot
   disk {
     slot            = 0
     size            = var.num_k3s_nodes_worker_storage

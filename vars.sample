@@ -32,7 +32,7 @@ variable "num_k3s_nodes" {
  default = 3
 }
 
-variable "num_k3s_nodes_mem" {
+variable "num_k3s_worker_mem" {
  default = "10240"
 }
 
@@ -42,6 +42,14 @@ variable "num_k3s_nodes_worker_storage" {
 
 variable "num_k3s_nodes_master_storage" {
  default = "10G"
+}
+
+variable "start_on_boot" {
+  default = true
+}
+
+variable "number_of_cores" {
+  default = 20
 }
 
 variable "tamplate_vm_name" {
